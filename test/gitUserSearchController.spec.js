@@ -14,6 +14,9 @@ describe('GitUserSearchController', function() {
   
   describe('when searching for a user', function() {
 
+    // var searchBox = element(by.model('searchTerm'))
+    // var searchButton = element(by.className('btn'))
+
     var items = [
       {
         "login": "tansaku",
@@ -27,9 +30,19 @@ describe('GitUserSearchController', function() {
       }
     ];
 
-
+    var httpBackend;
+    beforeEach(inject(function($httpBackend) {
+      httpBackend = $httpBackend
+      httpBackend
+        .when("GET", "http://api.github.com/search/user?q=hello")
+        .respond(
+          { items: items }
+        );
+    }));
 
     it('displays search results', function() {
+      // searchBox.sendKeys('hello');
+      // searchButton.click();
       ctrl.doSearch();
       expect(ctrl.searchResult.items).toEqual(items);
     });

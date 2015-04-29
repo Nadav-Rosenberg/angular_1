@@ -1,30 +1,16 @@
 githubUserSearch.controller('GitUserSearchController', ['$resource', function($resource) {
 
- 
-
   var self = this;
+
+  var searchResource = $resource('https://api.github.com/search/users?access_token=f9cdb85ee08d2d92462d96be9245822b3c5729e2');
 
   self.doSearch = function() {
 
-    self.searchResult = {
-      "items": [
-        {
-          "login": "spike0",
-          "avatar_url": "https://avatars.githubusercontent.com/u/30216?v=3",
-          "html_url": "https://github.com/tansaku"
-        }, 
-        {
-          "login": "stephenlloyd",
-          "avatar_url": "https://avatars.githubusercontent.com/u/196474?v=3",
-          "html_url": "https://github.com/stephenlloyd"
-        }
-      ]
-    };
-    
+    self.searchResult = searchResource.get(
+      { q: self.searchTerm}
+    );
 
-    console.log(self.searchTerm);
-    // console.log(GitUserSearchController.searchTerm);
+    console.log(self.searchResult.items)
   };
-
 
 }]);
