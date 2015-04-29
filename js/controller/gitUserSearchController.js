@@ -1,6 +1,6 @@
 githubUserSearch.controller('GitUserSearchController', ['$resource', function($resource) {
 
-  x = "Massud"
+ 
 
   var self = this;
 
@@ -9,7 +9,7 @@ githubUserSearch.controller('GitUserSearchController', ['$resource', function($r
     self.searchResult = {
       "items": [
         {
-          "login": "tansaku",
+          "login": "spike0",
           "avatar_url": "https://avatars.githubusercontent.com/u/30216?v=3",
           "html_url": "https://github.com/tansaku"
         }, 
@@ -21,10 +21,9 @@ githubUserSearch.controller('GitUserSearchController', ['$resource', function($r
       ]
     };
     
-    x = self.searchTerm
 
     console.log(self.searchTerm);
- 
+    // console.log(GitUserSearchController.searchTerm);
   };
 
 
