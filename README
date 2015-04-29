@@ -1,0 +1,18 @@
+Summery of chat with Spike about Servers: 
+
+When you create something it is like a painting. You can see it, you can give it to someone else to see it, etc. But you don't have an address that can publish for other people to just comoe and see it. 
+
+This is like the file system... you have it, you can see it, you send it, but other people can't just access it. 
+
+If you place the painting in a gallery, you can send people the address of the gallery and people can just come and see it. 
+
+This is a server. 
+
+So when a server is running, it means that there is a place / memory / that will respond to the routs that your sevrer expose. 
+
+NodeJS / Sintra are servers. 
+
+http-sever is ashort cut to publish all the files in your directory in the follwoing order: 
+1 - anything you specify directly 
+2 - ./public
+3 - ./
