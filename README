@@ -16,3 +16,8 @@ http-sever is ashort cut to publish all the files in your directory in the follw
 1 - anything you specify directly 
 2 - ./public
 3 - ./
+
+
+Point: 
+
+- it you use a mock server ($httpBackend), you must use httpBackend.flush(); before running the expect to ensure the data is passed into the controller. 

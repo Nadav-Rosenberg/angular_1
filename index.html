@@ -23,7 +23,7 @@
     </div>  
     <div>
       <form class="form-horizontal">
-        <input type="text" ng-model="searchCtrl.searchTerm">
+        <input type="text" ng-model="searchCtrl.searchTerm" ng-model-options="{ updateOn: 'default blur', debounce: {'default': 1500, 'blur': 0} }" ng-change="searchCtrl.doSearch()">
         <button class="btn" ng-click="searchCtrl.doSearch()">Search</button>
       </form>
 
