@@ -17,7 +17,6 @@ describe('GitGut Plofile binder', function() {
     searchButton.click();
 
     var profiles = element.all(by.repeater('user in searchCtrl.searchResult.items'));
-    // console.log(profiles.count)
     expect(profiles.count()).toEqual(1);
   });
 });
