@@ -9,15 +9,36 @@ describe('factory: Search', function() {
   }));
 
   beforeEach(inject(function($httpBackend) {
-    httpBackend = $httpBackend
-    httpBackend
-    .when("https://api.github.com/search/users?q=hello")
+  httpBackend = $httpBackend
+  httpBackend
+    .when("GET", 'https://api.github.com/search/users?access_token=f9cdb85ee08d2d92462d96be9245822b3c5729e2&q=hello')
     .respond(
       { items: items }
     );
   }));
 
+  var items = [
+    {
+      "login": "tansaku",
+      "avatar_url": "https://avatars.githubusercontent.com/u/30216?v=3",
+      "html_url": "https://github.com/tansaku"
+    }, 
+    {
+      "login": "stephenlloyd",
+      "avatar_url": "https://avatars.githubusercontent.com/u/196474?v=3",
+      "html_url": "https://github.com/stephenlloyd"
+    }
+  ];
+
   it('responds to query', function() {
     expect(search.query).toBeDefined();
   });
+
+  it('returns search results', function() {
+    search.query('hello')
+      .then(function(response) {
+        expect(response.data).toEqual(items)
+      })
+  })
+
 });
