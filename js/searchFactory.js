@@ -7,7 +7,7 @@ githubUserSearch.factory('Search', ['$http', function($http) {
         method: 'GET',
         params: {
           'q': searchTerm,
-          'access_token': 'f9cdb85ee08d2d92462d96be9245822b3c5729e2'
+          'access_token': '7f0d71a4e79c1512f393b77d6db94478dc94184d'
         }
       });
     }
