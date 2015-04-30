@@ -7,9 +7,9 @@ githubUserSearch.controller('GitUserSearchController', ['Search', function(Searc
         self.searchResult = response.data;
       })
 
-    $('#searchResultsFor').text(function() {
-      return "Last search result: \'" + self.searchTerm + "\'";
-    }); 
+    // $('#searchResultsFor').text(function() {
+    //   return "Last search result: \'" + self.searchTerm + "\'";
+    // }); 
   };
 
 }]);
