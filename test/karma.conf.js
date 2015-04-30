@@ -22,6 +22,7 @@ module.exports = function(config) {
       'js/**/*.js',
       'test/**/*.spec.js',
       'test/specHelper.js'
+      'githubkey.js'
     ],
 
 

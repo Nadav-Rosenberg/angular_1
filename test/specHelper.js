@@ -15,7 +15,7 @@
     inject(function($httpBackend) {
     httpBackend = $httpBackend
     httpBackend
-      .when("GET", 'https://api.github.com/search/users?access_token=0db3cd0834a55aec0db075d4f92492c54edf73a9&q=hello')
+      .when("GET", 'https://api.github.com/search/users?access_token=key&q=hello')
       .respond(
         { items: items }
       );
