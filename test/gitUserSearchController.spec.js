@@ -43,5 +43,12 @@ describe('GitUserSearchController', function() {
       httpBackend.flush();
       expect(ctrl.searchResult.items).toEqual(items);
     });
+
+    afterEach(function() {
+      httpBackend.verifyNoOutstandingExpectation();
+      httpBackend.verifyNoOutstandingRequest();
+    });
+
+
   });
 });
