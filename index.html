@@ -14,8 +14,6 @@
     <link rel="stylesheet" type="text/css" href="./public/css/stylesheet.css">
    
   </head>
-
-
   
   <body ng-controller="GitUserSearchController as searchCtrl">
     <div id="header">
@@ -23,10 +21,10 @@
     </div>  
     <div>
       <form class="form-horizontal">
-        <input type="text" ng-model="searchCtrl.searchTerm" ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }" ng-change="searchCtrl.doSearch()">
+        <input type="text" ng-model="searchCtrl.searchTerm" ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }" ng-change="searchCtrl.doSearch()" >
         <button class="btn" ng-click="searchCtrl.doSearch()">Search</button>
       </form>
-
+      <p id="searchResultsFor"></p>
       <ul class="list-group" ng-repeat="user in searchCtrl.searchResult.items">
         <li>
           <img ng-src="{{user.avatar_url}}&s=50">

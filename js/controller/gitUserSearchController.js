@@ -6,6 +6,10 @@ githubUserSearch.controller('GitUserSearchController', ['Search', function(Searc
       .then(function(response) {
         self.searchResult = response.data;
       })
+
+    $('#searchResultsFor').text(function() {
+      return "Last search result: \'" + self.searchTerm + "\'";
+    }); 
   };
 
 }]);
