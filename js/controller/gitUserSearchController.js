@@ -7,10 +7,10 @@ githubUserSearch.controller('GitUserSearchController', ['$resource', function($r
   self.doSearch = function() {
 
     self.searchResult = searchResource.get(
-      { q: self.searchTerm}
+      { q: self.searchTerm }
     );
 
-    console.log(self.searchResult.items)
+    console.log(self.searchResult )
   };
 
 }]);
